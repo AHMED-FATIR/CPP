@@ -6,12 +6,12 @@
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/22 09:44:51 by afatir            #+#    #+#              #
-#    Updated: 2023/07/22 09:46:56 by afatir           ###   ########.fr        #
+#    Updated: 2023/07/23 08:35:27 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Unnecessary_violence
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp Weapon.cpp HumanB.cpp HumanA.cpp
 OBJS = $(SRCS:.cpp=.o)

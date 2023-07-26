@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/19 21:34:25 by afatir            #+#    #+#              #
-#    Updated: 2023/07/23 08:35:27 by afatir           ###   ########.fr        #
+#    Created: 2023/07/26 06:20:59 by afatir            #+#    #+#              #
+#    Updated: 2023/07/26 09:10:07 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = HI_THIS_IS_BRAIN
+NAME = replace
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp
@@ -21,7 +21,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp
+%.o: %.cpp Replace.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -30,6 +30,10 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
+rmp: fclean
+	@rm -f *.replace
+
 re: fclean all
 
-.PHONY: all clean fclean re
+
+.PHONY: all clean fclean rmp re

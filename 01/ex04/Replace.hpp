@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 21:34:40 by afatir            #+#    #+#             */
-/*   Updated: 2023/07/23 07:49:59 by afatir           ###   ########.fr       */
+/*   Created: 2023/07/26 06:22:06 by afatir            #+#    #+#             */
+/*   Updated: 2023/07/26 07:58:40 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
-Zombie::Zombie(std::string name) : name(name){}
+#include <iostream>
+#include <fstream>
+#include <string>
 
-Zombie::~Zombie()
-{
-	std::cout << name << ": is destroyed" << std::endl;
-}
+int			read_and_write(const std::string& file, const std::string& s1, const std::string& s2);
+std::string	replacing(const std::string& input, const std::string& s1, const std::string& s2);
 
-void Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 09:44:39 by afatir            #+#    #+#             */
-/*   Updated: 2023/07/22 10:14:38 by afatir           ###   ########.fr       */
+/*   Updated: 2023/07/24 11:35:47 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
 	std::string name;
 	Weapon &weapon;
 public:
+	HumanA(Weapon &weapon);
 	HumanA(std::string name, Weapon &weapon);
 	~HumanA();
 	void attack() const;

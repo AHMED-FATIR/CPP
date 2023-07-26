@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 21:34:40 by afatir            #+#    #+#             */
-/*   Updated: 2023/07/23 07:49:59 by afatir           ###   ########.fr       */
+/*   Created: 2023/07/26 10:40:17 by afatir            #+#    #+#             */
+/*   Updated: 2023/07/26 11:05:46 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie(std::string name) : name(name){}
-
-Zombie::~Zombie()
+int main(int ac, char **av)
 {
-	std::cout << name << ": is destroyed" << std::endl;
-}
+	Harl harl;
 
-void Zombie::announce(void)
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	switch (ac)
+	{
+		case 2:
+			harl.complain(av[1]);
+			break;
+		default:
+			std::cout << "Wrong argument" << std::endl;
+			break;
+	}
+	return 0;
 }

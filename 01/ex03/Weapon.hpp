@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 09:44:56 by afatir            #+#    #+#             */
-/*   Updated: 2023/07/22 10:05:56 by afatir           ###   ########.fr       */
+/*   Updated: 2023/07/24 11:40:02 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Weapon
 {
 private:
-	std::string type;	
+	std::string type;
 public:
 	Weapon();
 	Weapon(std::string type);

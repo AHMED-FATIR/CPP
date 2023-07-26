@@ -6,12 +6,12 @@
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/19 21:34:25 by afatir            #+#    #+#              #
-#    Updated: 2023/07/22 08:44:09 by afatir           ###   ########.fr        #
+#    Updated: 2023/07/23 08:34:04 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Moarbrainz
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 OBJS = $(SRCS:.cpp=.o)

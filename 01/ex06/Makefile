@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/19 21:34:25 by afatir            #+#    #+#              #
-#    Updated: 2023/07/23 08:35:27 by afatir           ###   ########.fr        #
+#    Created: 2023/07/26 10:40:08 by afatir            #+#    #+#              #
+#    Updated: 2023/07/26 10:42:05 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = HI_THIS_IS_BRAIN
+NAME = harlFilter
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -21,7 +21,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp
+%.o: %.cpp Harl.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

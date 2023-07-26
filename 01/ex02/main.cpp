@@ -6,18 +6,12 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:32:39 by afatir            #+#    #+#             */
-/*   Updated: 2023/07/22 09:02:04 by afatir           ###   ########.fr       */
+/*   Updated: 2023/07/23 11:10:53 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-
-
-void v()
-{
-	system("leaks Moarbrainz");
-}
 
 int main()
 {

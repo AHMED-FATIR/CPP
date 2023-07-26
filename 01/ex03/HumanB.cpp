@@ -6,19 +6,26 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 09:44:42 by afatir            #+#    #+#             */
-/*   Updated: 2023/07/22 10:33:53 by afatir           ###   ########.fr       */
+/*   Updated: 2023/07/24 11:47:00 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : name(name), weapon(nullptr){}
+HumanB::HumanB() : name("Default"){
+    std::cout << "Default constructor of HumanB called" << std::endl;
+}
 
-HumanB::~HumanB(){}
+HumanB::HumanB(std::string name) : name(name), weapon(nullptr){
+    std::cout << "Constructor of HumanB called" << std::endl;
+}
 
-void HumanB::setWeapon(Weapon *weapon)
-{
-	this->weapon = weapon;
+HumanB::~HumanB(){
+    std::cout << "Destructor of HumanB called" << std::endl;
+}
+
+void HumanB::setWeapon(Weapon &newWeapon){
+    weapon = &newWeapon;
 }
 
 void HumanB::attack() const
