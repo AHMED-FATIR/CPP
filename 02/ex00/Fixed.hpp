@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 09:48:44 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/02 11:13:23 by afatir           ###   ########.fr       */
+/*   Created: 2023/07/27 08:57:38 by afatir            #+#    #+#             */
+/*   Updated: 2023/07/27 09:32:49 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# ifndef FIXED_HPP
+#define FIXED_HPP
+
 #include <iostream>
-#include <cctype>
+#include <string>
 
-int main(int ac, char **av)
+class Fixed
 {
-	if (ac < 2){
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
+private:
+	int fixed;
+	static const int fractional;
+public:
+	Fixed();
+	Fixed(const Fixed &NewFixed);
+	~Fixed();
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
+};
 
-	for (int i = 1; i < ac; i++)
-	{
-		std::string arg = av[i];
-		for (size_t j = 0; j < arg.length(); j++)
-			std::cout << (char)std::toupper(arg[j]);
-		std::cout << " ";
-	}
-	std::cout << std::endl;
-	return 0;
-}
+#endif

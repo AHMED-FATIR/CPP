@@ -6,16 +6,23 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 09:16:24 by afatir            #+#    #+#             */
-/*   Updated: 2023/07/18 05:10:39 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/02 11:47:43 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <iomanip>
 #include "PhoneBook.hpp"
 
-std::string	ft_get_input(std::string string)
+std::string Resize(std::string cmd)
+{
+	if (cmd.length() > 9)
+	{
+		cmd = cmd.substr(0, 10);
+		cmd[9] = '.';
+	}
+	return cmd;
+}
+
+std::string	GetInput(std::string string)
 {
 	std::string	command;
 	std::string	n_command;
@@ -28,15 +35,7 @@ std::string	ft_get_input(std::string string)
 			if(command.empty())
 				std::cout << RED << "can't tack empty field" << WHI << std::endl;
 			else
-			{
-				if (command.size() > 10)
-				{
-					n_command = command.substr(0, 10);
-					n_command[9] = '.';
-					return (n_command);
-				}
-				else break;
-			}
+				break;
 		}
 		else
 		{
@@ -51,29 +50,30 @@ std::string	ft_get_input(std::string string)
 	return (command);
 }
 
-Contact	the_add_func()
+Contact	TheAddFunc()
 {
 	Contact		contact;
 	std::string command;
 
-	command = ft_get_input("enter the first name of the contact: ");
+	command = GetInput("enter the first name of the contact: ");
 	contact.setFirstName(command);
 
-	command = ft_get_input("enter the last name of the contact: ");
+	command = GetInput("enter the last name of the contact: ");
 	contact.setLastName(command);
 
-	command = ft_get_input("enter the number of the contact: ");
-	contact.setPhoneNumber(command);
-
-	command = ft_get_input("enter the nickname of the contact: ");
+	command = GetInput("enter the nickname of the contact: ");
 	contact.setNickname(command);
 
-	command = ft_get_input("enter the darkest secret of the contact: ");
+	command = GetInput("enter the number of the contact: ");
+	contact.setPhoneNumber(command);
+
+	command = GetInput("enter the darkest secret of the contact: ");
 	contact.setDarkestSecret(command);
 
 	return (contact);
 	
 }
+
 int main()
 {
 	PhoneBook phoneBook;
@@ -81,14 +81,15 @@ int main()
 
 	while (true)
 	{
-		command = ft_get_input( "\e[1;32mEnter a command (ADD, SEARCH, or EXIT):\e[0;37m ");
+		command = GetInput( "\e[1;32mEnter a command (ADD, SEARCH, or EXIT):\e[0;37m ");
 		if (command == "ADD")
-			phoneBook.addContact(the_add_func());
+			phoneBook.addContact(TheAddFunc());
 		else if (command == "SEARCH")
 		{
 			std::cout << std::endl;
 			phoneBook.displayContacts();
 			std::cout << std::endl;
+			phoneBook.displayContactsFull();
 		}
 		else if (command == "EXIT")
 			break;

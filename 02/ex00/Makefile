@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/10 09:15:49 by afatir            #+#    #+#              #
-#    Updated: 2023/08/02 07:02:28 by afatir           ###   ########.fr        #
+#    Created: 2023/07/27 08:57:43 by afatir            #+#    #+#              #
+#    Updated: 2023/07/27 09:02:47 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = a.out
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp PhoneBook.cpp Contact.cpp
+SRCS = main.cpp Fixed.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -21,7 +21,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp PhoneBook.hpp
+%.o: %.cpp Fixed.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
