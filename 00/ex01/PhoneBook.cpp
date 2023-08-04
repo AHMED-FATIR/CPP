@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 09:16:10 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/02 11:47:34 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/04 20:48:09 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,15 @@ void PhoneBook::displayContactsFull()
 	if (numContacts == 0)
 		return;
 
-	cmd = GetInput("enter the index of the contact: ");
+	cmd = GetInput("\e[1;33menter the index of the contact: \e[0;37m");
 	for(size_t j = 0; j < cmd.length(); j++){
 		if (!std::isdigit(cmd[j])){
 			std::cout << RED << "Invalid Index (the index should be an int)" << WHI << std::endl << std::endl;
 			return;
 		}
+		i = i * 10 + cmd[j] - '0';
 	}
-	
-	i = stoi(cmd);
+
 	if (i > numContacts){
 		std::cout << RED << "This index (" << i << ") is not exist " << std::endl;
 		std::cout << "the current available indexes is between 0 and " << numContacts - 1 << WHI << std::endl << std::endl;

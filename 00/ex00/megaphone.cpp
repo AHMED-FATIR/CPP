@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 09:48:44 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/02 11:13:23 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/03 07:13:54 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int main(int ac, char **av)
 	{
 		std::string arg = av[i];
 		for (size_t j = 0; j < arg.length(); j++)
-			std::cout << (char)std::toupper(arg[j]);
-		std::cout << " ";
+			std::cout << (char)toupper(arg[j]);
 	}
 	std::cout << std::endl;
 	return 0;
