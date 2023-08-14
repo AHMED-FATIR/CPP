@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:21:15 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/07 10:59:43 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/07 20:46:41 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,3 +73,6 @@ void Harl::complain(std::string level)
 
 	(this->*complaint)();
 }
+
+
+// return_type (class::ptr_name)(func_param) = &class::func;

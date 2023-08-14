@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 09:44:42 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/06 11:02:29 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/14 11:25:11 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ HumanB::~HumanB(){
 }
 
 void HumanB::setWeapon(Weapon &newWeapon){
-    weapon = &newWeapon;
+    if (&newWeapon != nullptr)
+        weapon = &newWeapon;
 }
 
 void HumanB::attack() const

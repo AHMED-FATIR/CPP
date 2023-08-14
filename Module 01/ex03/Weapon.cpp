@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 09:44:53 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/06 09:27:47 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/14 11:20:15 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ const std::string &Weapon::getType() const{
 }
 
 void Weapon::setType(const std::string &newtype){
-	type = newtype;
+	if (this != nullptr)
+		this->type = newtype;
 }
