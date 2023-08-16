@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 08:57:38 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/12 08:46:31 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/16 08:12:14 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ private:
 
 public:
 	Fixed();
-	Fixed(const Fixed& other);
 	~Fixed();
-
+	Fixed(const Fixed& other);
 	Fixed& operator=(const Fixed& other);
 
 	int getRawBits() const;
