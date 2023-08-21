@@ -6,13 +6,13 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:35:23 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/20 11:48:21 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/21 21:54:58 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"FragTrap.hpp"
 	
-FragTrap::FragTrap():  ClapTrap(){
+FragTrap::FragTrap():  ClapTrap("Default"){
 	std::cout << GRE << "Default constructor called from FragTrap for: " << WHI << name << std::endl;
 }
 

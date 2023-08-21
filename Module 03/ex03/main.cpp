@@ -6,30 +6,35 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 09:27:08 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/21 10:42:33 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/21 22:32:04 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	ScavTrap S("ST");
-	S.attack("enemy");
-	S.takeDamage(30);
-	S.beRepaired(10);
-	S.guardGate();
-	std::cout << std::endl;
-	//copy const
-	ScavTrap S2(S);
-	std::cout << std::endl;
-	//copy assi
-	ScavTrap S3;
-	S3 = S2;
-	std::cout << std::endl;
+	DiamondTrap diamond("DT");
 
-	// ClapTrap *c = new (ScavTrap);
-	// delete c;
-	// return 0;
+	DiamondTrap d;
+	d= diamond;
+	// DiamondTrap d(diamond);
+
+	d.attack("keke");
+	d.takeDamage(15);
+	d.beRepaired(10);
+	std::cout<<std::endl;
+
+	diamond.attack("target");
+	diamond.takeDamage(15);
+	diamond.beRepaired(10);
+
+	std::cout<<std::endl;
+	diamond.highFivesGuys();
+	diamond.guardGate();
+	diamond.whoAmI();
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 09:15:08 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/20 11:09:50 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/21 21:56:02 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << name << " can't takes (amount < 0) points of repaired! Current hit points: " << hitPoints << std::endl;
 		return ;
 	}
-	if (hitPoints + amount <= 10){
+	if (hitPoints + amount <= 100){
 		hitPoints += amount;
 		std::cout << "ClapTrap " << name << " is repaired for " << amount << " hit points! Current hit points: " << hitPoints << std::endl;
 	}
 	else{
-		hitPoints = 10;
+		hitPoints = 100;
 		std::cout << "ClapTrap " << name << " is fully repaired!" << std::endl;
 	}
 }

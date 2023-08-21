@@ -6,13 +6,13 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:01:48 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/21 10:42:18 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/21 21:55:17 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ScavTrap.hpp"
 	
-ScavTrap::ScavTrap():  ClapTrap(){
+ScavTrap::ScavTrap():  ClapTrap("Default"){
 	std::cout << GRE << "Default constructor called from ScavTrap for: " << WHI << name << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 09:15:08 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/17 10:16:56 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/20 11:49:27 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(1
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << RED << "Destructor called from ClapTrap for: " << WHI << name << std::endl;
+	std::cout << RED << "Destructor called from ClapTrap for: " << WHI << this->name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -47,6 +47,7 @@ void ClapTrap::attack(const std::string& target)
 	if (energyPoints >= 1){
 		energyPoints--;
 		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << name << " Current energy points to attack: " << energyPoints << std::endl;
 	}
 	else{
 		std::cout << "ClapTrap " << name << " doesn't have enough energy to attack!" << std::endl;
@@ -55,6 +56,10 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if ((int)amount < 0){
+		std::cout << "ClapTrap " << name << " can't takes (amount < 0) points of damage! Current hit points: " << hitPoints << std::endl;
+		return ;
+	}
 	if (hitPoints > amount){
 		hitPoints -= amount;
 		std::cout << "ClapTrap " << name << " takes " << amount << " points of damage! Current hit points: " << hitPoints << std::endl;
@@ -67,12 +72,16 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (hitPoints + amount <= 10){
+	if ((int)amount < 0){
+		std::cout << "ClapTrap " << name << " can't takes (amount < 0) points of repaired! Current hit points: " << hitPoints << std::endl;
+		return ;
+	}
+	if (hitPoints + amount <= 100){
 		hitPoints += amount;
 		std::cout << "ClapTrap " << name << " is repaired for " << amount << " hit points! Current hit points: " << hitPoints << std::endl;
 	}
 	else{
-		hitPoints = 10;
+		hitPoints = 100;
 		std::cout << "ClapTrap " << name << " is fully repaired!" << std::endl;
 	}
 }
