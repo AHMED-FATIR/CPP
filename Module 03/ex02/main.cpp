@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 09:27:08 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/20 11:55:10 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/23 11:43:53 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,22 @@ int main()
 		F.beRepaired(1);
 		F.highFivesGuys();
 		std::cout << std::endl;
+	
 		//copy const
 		FragTrap F2(F);
+		F2.attack("enemy");
+		F2.takeDamage(20);
+		F2.beRepaired(1);
+		F2.highFivesGuys();
 		std::cout << std::endl;
+	
 		//copy assi
 		FragTrap F3;
 		F3 = F2;
+		F3.attack("enemy");
+		F3.takeDamage(20);
+		F3.beRepaired(1);
+		F3.highFivesGuys();
 		std::cout << std::endl;
 	}
 	return 0;

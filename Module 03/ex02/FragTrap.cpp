@@ -6,13 +6,16 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:35:23 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/20 11:48:21 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/23 11:42:21 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"FragTrap.hpp"
 	
 FragTrap::FragTrap():  ClapTrap(){
+	hitPoints = 100;
+	energyPoints = 100;
+	attackDamage = 30;
 	std::cout << GRE << "Default constructor called from FragTrap for: " << WHI << name << std::endl;
 }
 
@@ -27,7 +30,7 @@ FragTrap::~FragTrap(){
 	std::cout << RED << "Destructor called from FragTrap for: " << WHI << name << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& other)
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
 	std::cout << YEL << "Copy constructor called from FragTrap" << WHI << std::endl;
 	*this = other;

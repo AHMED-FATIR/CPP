@@ -6,13 +6,16 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:01:48 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/21 10:42:18 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/23 11:35:51 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ScavTrap.hpp"
 	
 ScavTrap::ScavTrap():  ClapTrap(){
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
 	std::cout << GRE << "Default constructor called from ScavTrap for: " << WHI << name << std::endl;
 }
 
@@ -27,7 +30,7 @@ ScavTrap::~ScavTrap(){
 	std::cout << RED << "Destructor called from ScavTrap for: " << WHI << name << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
 	std::cout << YEL << "Copy constructor called from ScavTrap" << WHI << std::endl;
 	*this = other;

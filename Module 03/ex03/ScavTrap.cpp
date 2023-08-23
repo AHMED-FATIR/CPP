@@ -6,13 +6,16 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:01:48 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/21 21:55:17 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/23 10:32:48 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ScavTrap.hpp"
 	
 ScavTrap::ScavTrap():  ClapTrap("Default"){
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
 	std::cout << GRE << "Default constructor called from ScavTrap for: " << WHI << name << std::endl;
 }
 

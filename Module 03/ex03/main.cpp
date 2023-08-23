@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 09:27:08 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/21 22:32:04 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/23 11:23:58 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 int main()
 {
-	DiamondTrap diamond("DT");
+	DiamondTrap diamond;
 
-	DiamondTrap d;
-	d= diamond;
-	// DiamondTrap d(diamond);
+	// DiamondTrap d;
+	// d = diamond;
+	DiamondTrap d(diamond);
 
 	d.attack("keke");
 	d.takeDamage(15);

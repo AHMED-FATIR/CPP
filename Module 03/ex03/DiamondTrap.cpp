@@ -6,23 +6,26 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:57:38 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/21 22:30:30 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/23 11:22:49 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() :  ClapTrap(), ScavTrap(), FragTrap(){
+DiamondTrap::DiamondTrap() :  ClapTrap(), FragTrap(), ScavTrap(){
 	_name = ClapTrap::name;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 30;
 	std::cout << GRE << "Default constructor called from DiamondTrap for: " << WHI << name << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
 	_name = name;
-	hitPoints = FragTrap::hitPoints;
-	energyPoints = ScavTrap::energyPoints;
-	attackDamage = FragTrap::attackDamage;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 30;
 	std::cout << GRE << "Constructor called from DiamondTrap for: " << WHI << name << std::endl;
 }
 
