@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:45 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 10:37:28 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 10:15:08 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,23 @@
 #define WHI "\e[0;37m"
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
+#define BLU "\e[0;34m"
 
 #include<iostream>
 #include<string>
 #include "Brain.hpp"
 
 class Animal{
-private:
-    Brain* brain;
 protected:
 	std::string type;
 
 public:
 	Animal();
-	Animal(std::string type);
-	Animal(const Animal& other);
 	virtual ~Animal();
-
+	Animal(const Animal& other);
 	Animal& operator=(const Animal& other);
 
 	virtual void makeSound() const;
 	std::string getType() const;
 };
-
-
 #endif

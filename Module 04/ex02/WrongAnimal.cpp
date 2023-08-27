@@ -6,22 +6,17 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 09:35:44 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 10:47:15 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/26 09:46:06 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() :  brain(new Brain()), type("WrongAnimal"){
+WrongAnimal::WrongAnimal() : type("WrongAnimal"){
 	std::cout << GRE << "Default constructor clled from WrongAnimal for: " << WHI << type << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string type) : brain(new Brain()), type(type){
-	std::cout << GRE << "Constructor clled from WrongAnimal for: " << WHI << type << std::endl;
-}
-
 WrongAnimal::~WrongAnimal() {
-	delete brain;
 	std::cout << RED << "Destructor clled from WrongAnimal for: " << WHI << type << std::endl;
 }
 

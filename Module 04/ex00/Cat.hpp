@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:53 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 09:13:49 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/26 09:43:13 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@
 
 class Cat : public Animal {
 public:
-    Cat();
-    ~Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    void makeSound() const;
+	Cat();
+	~Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+
+	void makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:28:15 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 10:35:43 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 11:30:57 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,23 @@
 #define WHI "\e[0;37m"
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
+#define BLU "\e[0;34m"
 
 #include<iostream>
 #include<string>
 
-class Brain {
+class Brain{
 private:
-    std::string ideas[100];
+	std::string *ideas;
 
 public:
-    Brain();
-    Brain(const Brain& other);
-    Brain& operator=(const Brain& other);
-    ~Brain();
+	Brain();
+	~Brain();
+	Brain(const Brain& other);
+	Brain& operator=(const Brain& other);
+
+	// static int idc;
+	// int id;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 09:34:25 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 10:38:38 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 08:21:30 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,15 @@
 
 #include<iostream>
 #include<string>
-#include "Brain.hpp"
 
 class WrongAnimal{
-private:
-    Brain* brain;
 protected:
 	std::string type;
 
 public:
 	WrongAnimal();
-	WrongAnimal(std::string type);
 	WrongAnimal(const WrongAnimal& other);
 	virtual ~WrongAnimal();
-
 	WrongAnimal& operator=(const WrongAnimal& other);
 
 	virtual void makeSound() const;

@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 10:28:15 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 11:30:57 by afatir           ###   ########.fr       */
+/*   Created: 2023/08/24 20:47:54 by afatir            #+#    #+#             */
+/*   Updated: 2023/08/24 20:48:24 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
 #define RED "\e[0;31m"
 #define WHI "\e[0;37m"
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
-#define BLU "\e[0;34m"
 
-#include<iostream>
-#include<string>
+// Include necessary headers and define constants if needed
 
-class Brain{
-private:
-	std::string *ideas;
+#include <iostream>
+#include <string>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
+class Cure : public AMateria
+{
 public:
-	Brain();
-	~Brain();
-	Brain(const Brain& other);
-	Brain& operator=(const Brain& other);
+    Cure();
+    Cure(const Cure &other);
+    ~Cure();
 
-	// static int idc;
-	// int id;
+    Cure &operator=(const Cure &other);
+
+    AMateria *clone() const;
+    void use(ICharacter &target);
 };
 
 #endif

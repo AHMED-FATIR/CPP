@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:45 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 09:28:34 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/26 09:44:21 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ protected:
 
 public:
 	Animal();
-	Animal(std::string type);
-	Animal(const Animal& other);
 	virtual ~Animal();
-
+	Animal(const Animal& other);
 	Animal& operator=(const Animal& other);
 
 	virtual void makeSound() const;

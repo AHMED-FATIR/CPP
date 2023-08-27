@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 10:28:15 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 11:30:57 by afatir           ###   ########.fr       */
+/*   Created: 2023/08/24 07:36:45 by afatir            #+#    #+#             */
+/*   Updated: 2023/08/27 11:40:18 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #define RED "\e[0;31m"
 #define WHI "\e[0;37m"
@@ -21,19 +21,19 @@
 
 #include<iostream>
 #include<string>
+#include "Brain.hpp"
 
-class Brain{
-private:
-	std::string *ideas;
+class Animal{
+protected:
+	std::string type;
 
 public:
-	Brain();
-	~Brain();
-	Brain(const Brain& other);
-	Brain& operator=(const Brain& other);
+	Animal();
+	virtual ~Animal() = 0;
+	Animal(const Animal& other);
+	Animal& operator=(const Animal& other);
 
-	// static int idc;
-	// int id;
+	virtual void makeSound() const = 0;
+	std::string getType() const;
 };
-
 #endif

@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/24 07:41:11 by afatir            #+#    #+#              #
-#    Updated: 2023/08/27 08:14:17 by afatir           ###   ########.fr        #
+#    Created: 2023/08/24 20:33:13 by afatir            #+#    #+#              #
+#    Updated: 2023/08/24 21:30:49 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS =  main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS =  main.cpp Character.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -21,7 +21,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
+%.o: %.cpp ICharacter.hpp Character.hpp IMateriaSource.hpp AMateria.hpp Ice.hpp Cure.hpp MateriaSource.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

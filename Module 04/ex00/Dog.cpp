@@ -6,13 +6,13 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:56 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 09:10:25 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 08:11:00 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(){
+Dog::Dog() : Animal(){
 	type = "Dog";
 	std::cout << GRE << "Default constructor clled from Dog for: " << WHI << type << std::endl;
 }

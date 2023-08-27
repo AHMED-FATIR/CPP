@@ -6,49 +6,39 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:37:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 11:32:06 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 12:13:26 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 void v()
 {
 	system("leaks a.out");
 }
 int main()
-{  
-    atexit(v);
-    const AAnimal* j = new Dog();
-    const AAnimal* i = new Cat();
+{
+	atexit(v);
+	// Creating instances of Dog and Cat
+	const Animal* d1 = new Dog();
+	const Animal* c1 = new Cat();
 
-    // Creating a Dog and copying its Brain
-    const AAnimal* copyJ = new Dog(*j);
+	// Creating an array of Animal pointers
+	const Animal* animals[] = {d1, c1};
+	const int numAnimals = sizeof(animals) / sizeof(animals[0]);
 
-    // Creating a Cat and copying its Brain
-    const AAnimal* copyI = new Cat(*i);
+	// Testing makeSound for each animal
+	for (int i = 0; i < numAnimals; ++i) {
+		const Animal* animal = animals[i];
+		animal->makeSound();
+		std::cout << "Type: " << animal->getType() << std::endl;
+	}
 
-    // Creating a new Dog and a new Cat
-    const AAnimal* newDog = new Dog();
-    const AAnimal* newCat = new Cat();
+	// Deleting the created objects
+	delete d1;
+	delete c1;
 
-    // Creating an array of Animal pointers
-    const AAnimal* animals[] = {j, i, copyJ, copyI, newDog, newCat};
-
-    // Looping over the array and testing makeSound()
-    for (size_t idx = 0; idx < sizeof(animals) / sizeof(animals[0]); ++idx) {
-        const AAnimal* animal = animals[idx];
-        animal->makeSound();
-    }
-
-    // Deleting the objects
-    for (size_t idx = 0; idx < sizeof(animals) / sizeof(animals[0]); ++idx) {
-        delete animals[idx];
-    }
-
-    return 0;
+	return 0;
 }

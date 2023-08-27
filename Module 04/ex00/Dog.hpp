@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:59 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 09:12:00 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/26 09:43:04 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     ~Dog();
     Dog(const Dog& other);
     Dog& operator=(const Dog& other);
+
     void makeSound() const;
 };
 

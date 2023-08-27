@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 10:28:15 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 11:30:57 by afatir           ###   ########.fr       */
+/*   Created: 2023/08/24 20:38:49 by afatir            #+#    #+#             */
+/*   Updated: 2023/08/24 21:17:23 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
 #define RED "\e[0;31m"
 #define WHI "\e[0;37m"
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
-#define BLU "\e[0;34m"
 
-#include<iostream>
-#include<string>
+// Include necessary headers and define constants if needed
 
-class Brain{
-private:
-	std::string *ideas;
+#include <iostream>
+#include <string>
+// #include "AMateria.hpp"
+class AMateria; 
 
+class ICharacter {
 public:
-	Brain();
-	~Brain();
-	Brain(const Brain& other);
-	Brain& operator=(const Brain& other);
-
-	// static int idc;
-	// int id;
+    virtual ~ICharacter() {}
+    virtual std::string const &getName() const = 0;
+    virtual void equip(AMateria *m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter &target) = 0;
 };
 
 #endif

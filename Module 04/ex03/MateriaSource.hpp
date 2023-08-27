@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 07:36:53 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 10:29:06 by afatir           ###   ########.fr       */
+/*   Created: 2023/08/24 20:49:24 by afatir            #+#    #+#             */
+/*   Updated: 2023/08/24 21:15:32 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #define RED "\e[0;31m"
 #define WHI "\e[0;37m"
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
-#define BLU "\e[0;34m"
 
-#include<iostream>
-#include<string>
-#include "Animal.hpp"
+// Include necessary headers and define constants if needed
 
-class Cat : public Animal {
+#include <iostream>
+#include <string>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+class AMateria; // Forward declaration
+#include "IMateriaSource.hpp"
+class ICharacter; // Forward declaration
+
+
+class MateriaSource : public IMateriaSource {
 private:
-	Brain* brain;
-public:
-    Cat();
-    ~Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
+    AMateria *learnedMaterias[4];
 
-    void makeSound() const;
-    // int getBrainInstanceID() const {
-    //     return brain->getInstanceID();
-    // }
+public:
+    MateriaSource();
+    ~MateriaSource();
+
+    void learnMateria(AMateria *m);
+    AMateria *createMateria(std::string const &type);
 };
 
 #endif

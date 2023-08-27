@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 09:37:09 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 09:54:52 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/26 09:46:40 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     ~WrongCat();
     WrongCat(const WrongCat& other);
     WrongCat& operator=(const WrongCat& other);
+
     void makeSound() const;
 };
 
