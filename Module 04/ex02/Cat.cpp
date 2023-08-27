@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:51 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 10:15:48 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 13:11:26 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Cat::~Cat(){
 
 Cat::Cat(const Cat& other) : Animal(other){
    std::cout << YEL << "Copy constructor clled from Cat" << WHI << std::endl;
-	delete brain;
 	this->brain = new Brain(*other.brain);
 	this->type = other.type;
 }

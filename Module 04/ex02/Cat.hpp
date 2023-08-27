@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:53 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 10:29:06 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 13:27:07 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ public:
     Cat& operator=(const Cat& other);
 
     void makeSound() const;
-    // int getBrainInstanceID() const {
-    //     return brain->getInstanceID();
-    // }
 };
 
 #endif

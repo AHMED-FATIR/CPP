@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:56 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 08:11:00 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 12:54:47 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::Dog(const Dog& other) : Animal(other){
 }
 
 Dog& Dog::operator=(const Dog& other) {
-	std::cout << YEL << "Copy assignment operator called from Animal" << WHI << std::endl;
+	std::cout << BLU << "Copy assignment operator called from Animal" << WHI << std::endl;
 	if (this != &other){
 		Animal::operator=(other);
 		type = other.type;

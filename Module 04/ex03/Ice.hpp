@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:45:58 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 21:20:45 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 14:31:50 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,18 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
+#include "Character.hpp"
 
 
 class Ice : public AMateria {
 public:
-    Ice();
-    Ice(const Ice &other);
-    ~Ice();
+	Ice();
+	~Ice();
+	Ice(const Ice &other);
+	Ice &operator=(const Ice &other);
 
-    Ice &operator=(const Ice &other);
-
-    AMateria *clone() const;
-    void use(ICharacter &target);
+	AMateria *clone() const;
+	void use(ICharacter &target);
 };
 
 #endif

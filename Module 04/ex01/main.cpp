@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:37:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 11:29:42 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 13:14:19 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void v()
 }
 int main()
 {  
-	atexit(v);
+	// atexit(v);
 	int n = 10;
 	Animal* animals[n];
 
@@ -43,8 +43,8 @@ int main()
 	delete i;
 	return 0;
 
-	// std::cout<< std::endl <<std::endl;
-	// Dog d;
 	// Dog d1;
-	// d1 = d;
+	// Dog d;
+	// d = d1;
+	// std::cout<< std::endl <<std::endl;
 }

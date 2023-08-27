@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 09:37:09 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/26 09:46:40 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 12:55:08 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #define WHI "\e[0;37m"
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
+BLU
 
 #include<iostream>
 #include<string>

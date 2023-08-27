@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:35:56 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/24 21:07:43 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 14:30:44 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@
 #define WHI "\e[0;37m"
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
-
-// Include necessary headers and define constants if needed
+#define BLU "\e[0;34m"
 
 #include <iostream>
 #include <string>
-#include "ICharacter.hpp"
+// #include "ICharacter.hpp"
 #include "Character.hpp"
 class ICharacter;
 
@@ -32,10 +31,10 @@ protected:
     std::string type;
 
 public:
+    AMateria();
     AMateria(std::string const &type);
-    AMateria(const AMateria &other);
     virtual ~AMateria();
-
+    AMateria(const AMateria &other);
     AMateria &operator=(const AMateria &other);
 
     std::string const &getType() const;

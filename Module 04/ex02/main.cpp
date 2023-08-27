@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:37:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 12:13:26 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 13:26:29 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ void v()
 }
 int main()
 {
-	atexit(v);
-	// Creating instances of Dog and Cat
-	const Animal* d1 = new Dog();
-	const Animal* c1 = new Cat();
+	// atexit(v);
+	Animal* d1 = new Dog();
+	Animal* c1 = new Cat();
+	Animal* d2 = new Dog();
+	Animal* c2 = new Cat();
 
-	// Creating an array of Animal pointers
-	const Animal* animals[] = {d1, c1};
-	const int numAnimals = sizeof(animals) / sizeof(animals[0]);
+	Animal* A[] = {d1, c1, d2, c2};
+	int num = sizeof(A) / sizeof(A[0]);
+	std::cout << sizeof(A) << " | " << sizeof(A[0]) << " | "<< sizeof(A) / sizeof(A[0]) << std::endl;
+	// exit(0);
 
-	// Testing makeSound for each animal
-	for (int i = 0; i < numAnimals; ++i) {
-		const Animal* animal = animals[i];
-		animal->makeSound();
-		std::cout << "Type: " << animal->getType() << std::endl;
+	for (int i = 0; i < num; ++i) {
+		std::cout << "Type: " << A[i]->getType() << "; ";
+		A[i]->makeSound();
 	}
-
-	// Deleting the created objects
 	delete d1;
 	delete c1;
+	delete d2;
+	delete c2;
 
 	return 0;
 }

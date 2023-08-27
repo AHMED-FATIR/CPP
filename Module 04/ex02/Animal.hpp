@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:45 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 11:40:18 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 13:09:19 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ protected:
 
 public:
 	Animal();
-	virtual ~Animal() = 0;
+	virtual ~Animal();
 	Animal(const Animal& other);
 	Animal& operator=(const Animal& other);
 

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 09:37:12 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 08:12:19 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 12:55:32 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other){
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& other) {
-	std::cout << YEL << "Copy assignment operator called from WrongCat" << WHI << std::endl;
+	std::cout << BLU << "Copy assignment operator called from WrongCat" << WHI << std::endl;
 	if (this != &other){
 		WrongAnimal::operator=(other);
 		type = other.type;
