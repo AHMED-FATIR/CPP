@@ -6,27 +6,28 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:48:27 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 13:43:53 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 21:31:28 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
-Cure::Cure() : AMateria() {
-	type = "cure";
-	std::cout << GRE << "Default constructor called from Cure for: " << WHI << type << std::endl;
+Cure::Cure() : AMateria("cure") {
+	// type = "cure";
+	// std::cout << GRE << "Default constructor called from Cure for: " << WHI << type << std::endl;
 }
 
 Cure::~Cure() {
-	std::cout << RED << "Destructor called form Cure for: " << WHI << type << std::endl;
+	// std::cout << RED << "Destructor called form Cure for: " << WHI << type << std::endl;
 }
 
 Cure::Cure(const Cure &other) : AMateria(other) {
-	std::cout << YEL << "Cure copy constructor" << WHI << std::endl;
+	// std::cout << YEL << "Cure copy constructor" << WHI << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &other) {
-	std::cout << BLU << "Copy assignment operator called from Cure" << WHI << std::endl;
+	// std::cout << BLU << "Copy assignment operator called from Cure" << WHI << std::endl;
 	if (this != &other) {
 		AMateria::operator=(other);
 	}
@@ -34,8 +35,8 @@ Cure &Cure::operator=(const Cure &other) {
 }
 
 AMateria *Cure::clone() const {
-	std::cout << "Cloning Cure" << std::endl;
-	return new Cure(*this);
+	// std::cout << "Cloning Cure" << std::endl;
+	return new Cure();
 }
 
 void Cure::use(ICharacter &target) {

@@ -6,28 +6,29 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:46:52 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 13:44:00 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 21:29:53 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 
-Ice::Ice() : AMateria() {
-	type = "ice";
-	std::cout << GRE << "Default constructor called from Ice for: " << WHI << type << std::endl;
+Ice::Ice() : AMateria("ice") {
+	// type = "ice";
+	// std::cout << GRE << "Default constructor called from Ice for: " << WHI << type << std::endl;
 }
 
 Ice::~Ice() {
-	std::cout << RED << "Destructor called form Ice for: " << type << WHI << std::endl;
+	// std::cout << RED << "Destructor called form Ice for: " << type << WHI << std::endl;
 }
 
 Ice::Ice(const Ice &other) : AMateria(other) {
-	std::cout << YEL << "Copy constructor called from Ice" << WHI << std::endl;
+	// std::cout << YEL << "Copy constructor called from Ice" << WHI << std::endl;
 }
 
 
 Ice &Ice::operator=(const Ice &other) {
-	std::cout << BLU << "Copy assignment operator called from Ice" << WHI << std::endl;
+	// std::cout << BLU << "Copy assignment operator called from Ice" << WHI << std::endl;
 	if (this != &other) {
 		AMateria::operator=(other);
 	}
@@ -35,7 +36,7 @@ Ice &Ice::operator=(const Ice &other) {
 }
 
 AMateria *Ice::clone() const {
-	std::cout << "Cloning Ice" << std::endl;
+	// std::cout << "Cloning Ice" << std::endl;
 	return new Ice(*this);
 }
 

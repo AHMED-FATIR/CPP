@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:49:24 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 14:34:47 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 21:32:24 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,20 @@
 
 #include <iostream>
 #include <string>
-#include "AMateria.hpp"
-#include "Character.hpp"
-class AMateria;
-
-class IMateriaSource
-{
-public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria *m) = 0;
-	virtual AMateria *createMateria(std::string const &type) = 0;
-};
+#include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource{
 private:
-    AMateria *learnedMaterias[4];
+	AMateria *learnedMaterias[4];
 
 public:
-    MateriaSource();
-    ~MateriaSource();
-    MateriaSource(const MateriaSource &other);
-    MateriaSource &operator=(const MateriaSource &other);
+	MateriaSource();
+	~MateriaSource();
+	MateriaSource(const MateriaSource &other);
+	MateriaSource &operator=(const MateriaSource &other);
 
-    void learnMateria(AMateria *m);
-    AMateria *createMateria(std::string const &type);
+	void learnMateria(AMateria *m);
+	AMateria *createMateria(std::string const &type);
 };
 
 #endif

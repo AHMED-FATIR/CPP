@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:45:58 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 14:31:50 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 21:09:34 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@
 #define GRE "\e[0;32m"
 #define YEL "\e[0;33m"
 
-// Include necessary headers and define constants if needed
-
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
-#include "Character.hpp"
-
 
 class Ice : public AMateria {
 public:

@@ -6,26 +6,27 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:42:26 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 14:01:56 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 21:31:12 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character() : name("Default") {
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = nullptr;
-	std::cout << GRE << "Default constructor called from Character for: " << WHI << name << std::endl;
+	// std::cout << GRE << "Default constructor called from Character for: " << WHI << name << std::endl;
 }
 
 Character::Character(std::string const &name) : name(name) {
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = nullptr;
-	std::cout << GRE << "Constructor called from Character for: " << WHI << name << std::endl;
+	// std::cout << GRE << "Constructor called from Character for: " << WHI << name << std::endl;
 }
 
 Character::Character(const Character &other) : name(other.name) {
-	std::cout << YEL << " Copy constructor called from Character " << WHI << std::endl;
+	// std::cout << YEL << " Copy constructor called from Character " << WHI << std::endl;
 	for (int i = 0; i < 4; ++i)
 	{
 		if (other.inventory[i])
@@ -36,13 +37,13 @@ Character::Character(const Character &other) : name(other.name) {
 }
 
 Character::~Character() {
-	std::cout << RED << "Destructor called from Character for: " << WHI << name << std::endl;
+	// std::cout << RED << "Destructor called from Character for: " << WHI << name << std::endl;
 	for (int i = 0; i < 4; ++i)
 		delete inventory[i];
 }
 
 Character &Character::operator=(const Character &other) {
-	std::cout << BLU << "Copy assignment operator called from Character" << WHI << std::endl;
+	// std::cout << BLU << "Copy assignment operator called from Character" << WHI << std::endl;
 	if (this != &other)
 	{
 		name = other.name;

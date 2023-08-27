@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:47:54 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 14:31:58 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/27 21:31:35 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
-#include "Character.hpp"
 
 class Cure : public AMateria
 {
 public:
-    Cure();
-    ~Cure();
-    Cure(const Cure &other);
-    Cure &operator=(const Cure &other);
+	Cure();
+	~Cure();
+	Cure(const Cure &other);
+	Cure &operator=(const Cure &other);
 
-    AMateria *clone() const;
-    void use(ICharacter &target);
+	AMateria *clone() const;
+	void use(ICharacter &target);
 };
 
 #endif
