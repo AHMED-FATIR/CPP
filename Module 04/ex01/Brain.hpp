@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:28:15 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 13:13:38 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 10:05:24 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ public:
 	~Brain();
 	Brain(const Brain& other);
 	Brain& operator=(const Brain& other);
-	// static int idc;
-	// int id;
 };
 
 #endif

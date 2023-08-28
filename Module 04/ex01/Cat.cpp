@@ -6,13 +6,13 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:51 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 13:11:05 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 09:56:08 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal(){
+Cat::Cat(){
 	type = "Cat";
 	brain = new Brain();
 	std::cout << GRE << "Default constructor clled from Cat for: " << WHI << type << std::endl;
@@ -26,6 +26,7 @@ Cat::~Cat(){
 Cat::Cat(const Cat& other) : Animal(other){
    std::cout << YEL << "Copy constructor clled from Cat" << WHI << std::endl;
 	this->brain = new Brain(*other.brain);
+	Animal::operator=(other);
 	this->type = other.type;
 }
 

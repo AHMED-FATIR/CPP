@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:51 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 12:54:43 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 09:55:55 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::~Cat(){
 	std::cout << RED << "Destructor clled from Cat for: " << WHI << type << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other){
+Cat::Cat(const Cat& other){
 	std::cout << YEL << "Copy constructor clled from Cat" << WHI << std::endl;
 	*this = other;
 }

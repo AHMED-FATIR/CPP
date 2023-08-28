@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:37:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 13:14:19 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 10:06:40 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-void v()
-{
-	system("leaks a.out");
-}
 int main()
 {  
-	// atexit(v);
 	int n = 10;
 	Animal* animals[n];
 
@@ -37,13 +32,14 @@ int main()
 	for (int i = 0; i < n; ++i) {
 		delete animals[i];
 	}
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	Animal* j = new Dog();
+	Animal* i = new Cat();
 	delete j;
 	delete i;
 	return 0;
 
 	// Dog d1;
+	// std::cout<< std::endl;
 	// Dog d;
 	// d = d1;
 	// std::cout<< std::endl <<std::endl;

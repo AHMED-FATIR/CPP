@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:37:01 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/26 09:42:18 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 09:50:00 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "WrongCat.hpp"
 
 int main()
-{   
+{
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -40,6 +40,5 @@ int main()
 	delete i;
 	delete wrongCat;
 
-	
 	return 0;
 }

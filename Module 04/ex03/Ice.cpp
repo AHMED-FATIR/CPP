@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:46:52 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 21:29:53 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 09:28:34 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ICharacter.hpp"
 
 Ice::Ice() : AMateria("ice") {
-	// type = "ice";
+	type = "ice";
 	// std::cout << GRE << "Default constructor called from Ice for: " << WHI << type << std::endl;
 }
 

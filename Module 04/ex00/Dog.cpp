@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:56 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 12:54:47 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 09:48:04 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::~Dog(){
 	std::cout << RED << "Destructor clled from Dog for: " << WHI << type << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other){
+Dog::Dog(const Dog& other){
    std::cout << YEL << "Copy constructor clled from Dog" << WHI << std::endl;
 	*this = other;
 }

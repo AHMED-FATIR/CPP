@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:48:27 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 21:31:28 by afatir           ###   ########.fr       */
+/*   Updated: 2023/08/28 09:28:31 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ICharacter.hpp"
 
 Cure::Cure() : AMateria("cure") {
-	// type = "cure";
+	type = "cure";
 	// std::cout << GRE << "Default constructor called from Cure for: " << WHI << type << std::endl;
 }
 
@@ -36,7 +36,7 @@ Cure &Cure::operator=(const Cure &other) {
 
 AMateria *Cure::clone() const {
 	// std::cout << "Cloning Cure" << std::endl;
-	return new Cure();
+	return new Cure(*this);
 }
 
 void Cure::use(ICharacter &target) {
