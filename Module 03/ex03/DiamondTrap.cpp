@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:57:38 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/23 11:22:49 by afatir           ###   ########.fr       */
+/*   Updated: 2023/09/13 10:37:46 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,16 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 
 void DiamondTrap::whoAmI() {
 	std::cout << "I am " << _name << " and my ClapTrap name is " << ClapTrap::name << std::endl;
+}
+
+void DiamondTrap::attack(const std::string& target)
+{
+	if (energyPoints >= 1){
+		energyPoints--;
+		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << name << " Current energy points to attack: " << energyPoints << std::endl;
+	}
+	else{
+		std::cout << "ClapTrap " << name << " doesn't have enough energy to attack!" << std::endl;
+	}
 }

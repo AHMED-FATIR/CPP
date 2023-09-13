@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:57:41 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/23 11:22:57 by afatir           ###   ########.fr       */
+/*   Updated: 2023/09/13 10:37:59 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 	DiamondTrap& operator=(const DiamondTrap& other);
 
 	void whoAmI();
+	void attack(const std::string& target);
 };
 
 #endif

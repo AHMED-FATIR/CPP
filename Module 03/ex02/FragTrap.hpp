@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:35:19 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/17 10:39:55 by afatir           ###   ########.fr       */
+/*   Updated: 2023/09/13 10:36:57 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 	FragTrap& operator=(const FragTrap& other);
 
 	void highFivesGuys();
+	void attack(const std::string& target);
 };
 
 #endif

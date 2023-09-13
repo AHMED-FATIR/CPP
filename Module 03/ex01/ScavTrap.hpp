@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:01:54 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/20 10:59:48 by afatir           ###   ########.fr       */
+/*   Updated: 2023/09/13 10:34:51 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 	ScavTrap& operator=(const ScavTrap& other);
 
 	void guardGate();
+	void attack(const std::string& target);
 };
 
 #endif
