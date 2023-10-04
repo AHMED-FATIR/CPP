@@ -6,7 +6,7 @@
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 06:20:59 by afatir            #+#    #+#              #
-#    Updated: 2023/08/07 07:45:57 by afatir           ###   ########.fr        #
+#    Updated: 2023/10/04 12:36:38 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ fclean: clean
 
 re: fclean all
 
-# rmp: clean
-# 	@rm -f *.replace
+rmp: clean
+	@rm -f *.replace
 
 .PHONY: all clean fclean re

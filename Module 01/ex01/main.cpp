@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:32:39 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/06 09:10:42 by afatir           ###   ########.fr       */
+/*   Updated: 2023/10/04 12:14:42 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void v()
 int main()
 {
     // atexit(v);
-    int num = 5;
+    int num = -5;
     Zombie* zombie = zombieHorde(num, "Zombie ");
 
     for (int i = 0; i < num; i++)
