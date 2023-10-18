@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 09:25:13 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/07 11:02:51 by afatir           ###   ########.fr       */
+/*   Updated: 2023/10/18 09:31:03 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int main()
     harl.complain("INFO");
     harl.complain("WARNING");
     harl.complain("ERROR");
+    harl.complain("Invalid complaint");
     return 0;
 }
