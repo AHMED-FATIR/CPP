@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 07:36:48 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 11:34:12 by afatir           ###   ########.fr       */
+/*   Updated: 2023/10/18 09:49:03 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ Animal& Animal::operator=(const Animal& other){
 	}
 	return *this;
 }
-
-// void Animal::makeSound() const{
-// 	std::cout << "Some Animal sound" << std::endl;
-// }
 
 std::string Animal::getType() const{
 	return type;
