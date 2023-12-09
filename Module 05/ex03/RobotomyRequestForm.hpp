@@ -6,13 +6,14 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:02:14 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/08 22:04:51 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/09 12:06:25 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 # include "AForm.hpp"
+# include <cstdlib>
 
 class RobotomyRequestForm : public AForm
 {

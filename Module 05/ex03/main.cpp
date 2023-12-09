@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 08:11:53 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/09 09:22:22 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:58:58 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 int main()
 {
+	AForm* rrf = NULL;
 	try
 	{
 		Intern someRandomIntern;
-		AForm* rrf;
 		Bureaucrat b("Bender", 1);
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		rrf->beSigned(b);
@@ -30,5 +30,6 @@ int main()
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
+		delete rrf;
 	}
 }
