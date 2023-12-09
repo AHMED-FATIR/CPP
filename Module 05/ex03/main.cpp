@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 08:11:53 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/08 22:43:26 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/09 09:22:22 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "Intern.hpp"
-void l()
-{
-	system("leaks Bureaucrat");
-}
+
 int main()
 {
-	atexit(l);
 	try
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomyrequest", "Bender");
+		Bureaucrat b("Bender", 1);
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		rrf->beSigned(b);
+		rrf->execute(b);
 		delete rrf;
 	}
 	catch (std::exception &e)
