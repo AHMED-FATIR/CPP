@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:37:56 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/10 09:38:09 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 21:46:15 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 int main()
 {
-    Serializer s("test");
-    void *raw = s.serialize();
-    Data *data = s.deserialize(raw);
-    std::cout << GRE << "Deserialized data: " << std::endl;
-    std::cout << GRE << "s1: " << data->s1 << std::endl;
-    std::cout << GRE << "n: " << data->n << std::endl;
-    std::cout << GRE << "s2: " << data->s2 << std::endl;
+    Data *data = new Data;
+    data->s1 = "Hello";
+    data->n = 42;
+    data->s2 = "World";
+
+    uintptr_t raw = Serializer::serialize(data);
+    Data *data2 = Serializer::deserialize(raw);
+
+    std::cout << data2->s1 << std::endl;
+    std::cout << data2->n << std::endl;
+    std::cout << data2->s2 << std::endl;
+
     delete data;
     return 0;
 }

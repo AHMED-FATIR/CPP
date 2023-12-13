@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 09:16:18 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/02 11:37:15 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 22:16:14 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ public:
 	void setPhoneNumber(std::string phonenumber);
 	void setDarkestSecret(std::string darkestsecret);
 
-	std::string getFirstName();
-	std::string getLastName();
-	std::string getNickname();
-	std::string getPhoneNumber();
-	std::string getDarkestSecret();
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	std::string getNickname() const;
+	std::string getPhoneNumber() const;
+	std::string getDarkestSecret() const;
 
 private:
 	std::string firstName;

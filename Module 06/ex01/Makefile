@@ -6,11 +6,11 @@
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/10 09:35:59 by afatir            #+#    #+#              #
-#    Updated: 2023/12/10 09:41:12 by afatir           ###   ########.fr        #
+#    Updated: 2023/12/13 22:03:53 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Serializer
+NAME = ReinterpretCast
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = Serializer.cpp main.cpp

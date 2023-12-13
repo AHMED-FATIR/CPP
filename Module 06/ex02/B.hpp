@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:44:14 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/10 09:44:30 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 21:48:51 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 #include "Base.hpp"
 
 class B : public Base
-{
-private:
-    /* data */
-public:
-    B(/* args */);
-    B(B const &cpy);
-    ~B();
-    B &operator=(B const &cpy);
-};
+{};
 
 #endif

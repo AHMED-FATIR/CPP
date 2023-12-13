@@ -6,24 +6,10 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:42:54 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/10 09:43:21 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 21:47:45 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-// Base::Base(/* args */)
-
-// {
-// }
-
-// Base::Base(Base const &cpy)
-
-// {
-//     *this = cpy;
-
-// }
-
-Base::~Base()
-{
-}
+Base::~Base(){}

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:50:05 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 21:32:09 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 22:29:42 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource() {
 	for (int i = 0; i < 4; ++i) {
-		learnedMaterias[i] = nullptr;
+		learnedMaterias[i] = NULL;
 	}
 	// std::cout << GRE << "Default constructor called from MateriaSource" << WHI << std::endl;
 }
@@ -33,7 +33,7 @@ MateriaSource::MateriaSource(const MateriaSource &other){
 		if (other.learnedMaterias[i])
 			learnedMaterias[i] = other.learnedMaterias[i];
 		else
-			learnedMaterias[i] = nullptr;
+			learnedMaterias[i] = NULL;
 	}
 }
 
@@ -45,7 +45,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other){
 		if (other.learnedMaterias[i])
 			learnedMaterias[i] = other.learnedMaterias[i];
 		else
-			learnedMaterias[i] = nullptr;
+			learnedMaterias[i] = NULL;
 	}
 	return *this;
 }
@@ -68,5 +68,5 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
 		if (learnedMaterias[i] && learnedMaterias[i]->getType() == type)
 			return learnedMaterias[i]->clone();
 	}
-	return nullptr;
+	return NULL;
 }

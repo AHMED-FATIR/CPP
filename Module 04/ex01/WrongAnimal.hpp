@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 09:34:25 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/28 14:39:24 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 22:28:56 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ protected:
 public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal& other);
-	virtual ~WrongAnimal();
+	~WrongAnimal();
 	WrongAnimal& operator=(const WrongAnimal& other);
 
 	void makeSound() const;

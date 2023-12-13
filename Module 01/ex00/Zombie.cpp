@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:34:40 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/05 09:47:25 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 22:18:17 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ Zombie::~Zombie(){
 	std::cout << RED << "Destructor called for : " << WHI << name << std::endl;
 }
 
-void Zombie::announce(void){
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+void Zombie::announce(void) const{
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

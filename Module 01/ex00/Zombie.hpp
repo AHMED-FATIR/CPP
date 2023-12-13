@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:33:10 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/06 08:09:00 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 22:17:58 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	Zombie(std::string name);
 	~Zombie();
 
-	void announce(void);
+	void announce(void) const;
 };
 
 Zombie *newZombie(std::string name);

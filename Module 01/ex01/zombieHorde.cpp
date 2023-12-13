@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 08:29:23 by afatir            #+#    #+#             */
-/*   Updated: 2023/10/04 12:14:09 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 22:19:25 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ Zombie* zombieHorde( int N, std::string name )
 	}
 	for (int i = 0; i < N ; i++){
 		zombie[i].setName(name);
+
+		// zombie[i].~Zombie();
+		// new (&zombie[i]) Zombie(name);
+		// zombie[i] = Zombie(name);
 	}
 	return zombie;
 }

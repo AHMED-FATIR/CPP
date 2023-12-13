@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 08:10:41 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/08 22:40:51 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/09 12:39:25 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	Bureaucrat::decrement()
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
+	
 	return ("Grade too high");
 }
 

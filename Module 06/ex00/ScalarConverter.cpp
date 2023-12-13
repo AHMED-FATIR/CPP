@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:32:57 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/13 16:04:31 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 21:33:09 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		pars(std::string str)
 
 void	toChar(std::string str)
 {
-	if (std::isprint(str[0]) && str.length() == 1){
+	if (std::isprint(str[0]) && !std::isdigit(str[0]) && str.length() == 1){
 		std::cout << GRE << "'" << str[0] << "'" << WHI << std::endl; return;
 	}
 	if (!pars(str))
@@ -62,7 +62,7 @@ void	toChar(std::string str)
 	if (d != static_cast<int>(d)){
 		std::cout << RED << "impossible" << WHI << std::endl; return ;
 	}
-	if (d < 32 || d > 126){
+	if (!std::isprint(d)){
 		std::cout << RED << "non displayable" << WHI << std::endl; return ;
 	}
 	std::cout << GRE << "'" << static_cast<char>(d) << "'" << std::endl;

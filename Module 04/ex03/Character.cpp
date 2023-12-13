@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 20:42:26 by afatir            #+#    #+#             */
-/*   Updated: 2023/08/27 21:31:12 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/13 22:31:11 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 Character::Character() : name("Default") {
 	for (int i = 0; i < 4; ++i)
-		inventory[i] = nullptr;
+		inventory[i] = NULL;
 	// std::cout << GRE << "Default constructor called from Character for: " << WHI << name << std::endl;
 }
 
 Character::Character(std::string const &name) : name(name) {
 	for (int i = 0; i < 4; ++i)
-		inventory[i] = nullptr;
+		inventory[i] = NULL;
 	// std::cout << GRE << "Constructor called from Character for: " << WHI << name << std::endl;
 }
 
@@ -32,7 +32,7 @@ Character::Character(const Character &other) : name(other.name) {
 		if (other.inventory[i])
 			inventory[i] = other.inventory[i]->clone();
 		else
-			inventory[i] = nullptr;
+			inventory[i] = NULL;
 	}
 }
 
@@ -53,7 +53,7 @@ Character &Character::operator=(const Character &other) {
 			if (other.inventory[i])
 				inventory[i] = other.inventory[i]->clone();
 			else
-				inventory[i] = nullptr;
+				inventory[i] = NULL;
 		}
 	}
 	return *this;
@@ -77,7 +77,7 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx){
 	if (idx >= 0 && idx < 4)
-		inventory[idx] = nullptr;
+		inventory[idx] = NULL; // old version missing garbage collection
 }
 
 void Character::use(int idx, ICharacter &target) {
