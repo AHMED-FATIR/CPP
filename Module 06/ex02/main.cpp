@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:45:37 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/13 22:15:00 by afatir           ###   ########.fr       */
+/*   Updated: 2023/12/14 19:33:09 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Base	*generate(void)
 		return new C();
 }
 
-void	identify_from_pointer(Base *p)
+void	identify(Base *p)
 {
 	if (dynamic_cast<A *>(p))
 		std::cout << "A" << std::endl;
@@ -36,7 +36,7 @@ void	identify_from_pointer(Base *p)
 		std::cout << "C" << std::endl;
 }
 
-void	identify_from_reference(Base &p)
+void	identify(Base &p)
 {
 	try
 	{
@@ -72,8 +72,8 @@ int	main(void)
 {
 	srand(time(NULL));
 	Base *base = generate();
-	identify_from_pointer(base);
-	identify_from_reference(*base);
+	identify(base);
+	identify(*base);
 	delete base;
 	return 0;
 }
