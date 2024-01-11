@@ -6,13 +6,13 @@
 #    By: afatir <afatir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 15:57:03 by afatir            #+#    #+#              #
-#    Updated: 2024/01/10 15:57:43 by afatir           ###   ########.fr        #
+#    Updated: 2024/01/11 12:04:37 by afatir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 SRCS = main.cpp PmergeMe.cpp
 OBJS = $(SRCS:.cpp=.o)
 
