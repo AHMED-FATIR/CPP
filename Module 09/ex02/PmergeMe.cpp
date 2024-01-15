@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:57:10 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/14 05:52:39 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/15 17:10:53 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,108 +14,76 @@
 
 PmergeMe::PmergeMe(){}
 PmergeMe::~PmergeMe(){}
-
 PmergeMe::PmergeMe(PmergeMe const &src){
 	*this = src;
 }
-
 PmergeMe &PmergeMe::operator=(PmergeMe const &src){
-	if (this != &src)
-	{
+	if (this != &src){
 		this->vec = src.vec;
-		this->lst = src.lst;
+		this->deq = src.deq;
 	}
 	return *this;
 }
-//##############################################################################
+
+//#####################################parsing#######################################
+void PmergeMe::print(std::string str)
+{
+	std::vector<int>::iterator it = this->vec.begin();
+	std::cout << GRE << str << WHI;
+	while (it != this->vec.end()){
+		std::cout << *it << " ";
+		it++;
+	}
+	std::cout << std::endl;
+}
 
 void PmergeMe::inside(std::string av)
 {
-	for (size_t i = 0; i < av.length(); i++)
-	{
+	for (size_t i = 0; i < av.length(); i++){
 		if (av[i] == ' ')
 			continue;
 		if (!std::isdigit(av[i]))
-			throw std::runtime_error("1: Invalid argument");
+				throw std::runtime_error("Error");
 	}
 	std::istringstream iss(av);
 	std::string tmp;
 	while (iss >> tmp){
-		this->lst.push_back(std::atoi(tmp.c_str()));
 		this->vec.push_back(std::atoi(tmp.c_str()));
+		this->deq.push_back(std::atoi(tmp.c_str()));
 	}
 }
 
-void PmergeMe::parse(char **av)
+void PmergeMe::pars(char **av)
 {
-	for (size_t i = 1; av[i]; i++)
-	{
+	for (size_t i = 1; av[i]; i++){
 		int flag = 0;
-		for (size_t j = 0; av[i][j]; j++)
-		{
+		for (size_t j = 0; av[i][j]; j++){
 			if (av[i][j] == ' '){
 				flag = 1;
 				inside(av[i]);
 				break;
 			}
 			else if (!std::isdigit(av[i][j]))
-			{
-				std::cout << av[i][j] << std::endl;
-				throw std::runtime_error("2: Invalid argument");
-			}
+				throw std::runtime_error("Error");
 		}
 		if (flag == 0){
-			this->lst.push_back(std::atoi(av[i]));
+			this->deq.push_back(std::atoi(av[i]));
 			this->vec.push_back(std::atoi(av[i]));
 		}
 	}
-	// print();
+	if (this->vec.size() == 1)
+		throw std::runtime_error("Error");
+	print("Before: ");
 }
 
-void PmergeMe::print()
-{
-	std::list<int>::iterator it = this->lst.begin();
-	std::cout << "\tList: ";
-	while (it != this->lst.end())
-	{
-		std::cout << *it << " ";
-		it++;
-	}
-	std::vector<int>::iterator it2 = this->vec.begin();
-	std::cout << std::endl;
-	std::cout << "\tVector: ";
-	while (it2 != this->vec.end())
-	{
-		std::cout << *it2 << " ";
-		it2++;
-	}
-	std::cout << std::endl;
-}
-/*
-sarting sorting with the ford-johnson algorithm
-steps:
-1-Group the elements of vector into [ n / 2 ] pairs of elements
-2-determine the larger element in each pair
-3-recursively sort the larger elements
-4-create the main chain and the pending chain
-5-generate theorder of instructions:
-	To make life easier generate the order of insertion first
-	use jacobsthal sequence
-	 with a specially chosen insertion ordering
-6-Insert the elements of the pend into the main chain
-7-Insert the elements of the main chain into the vector
-	 
-*/
-
+//#####################################vector#######################################
 void sortVectorPair(std::vector<std::pair<int, int> > &v_p)
 {
 	std::pair<int, int> p;
-	for(int i = 0; i < static_cast<int>(v_p.size()); i++)
-	{
+	for(int i = 0; i < (int)v_p.size(); i++){
 		p = v_p[i];
 		int j = i - 1;
-		while (j >= 0 && v_p[j].first > p.first)
-		{
+		while (j >= 0 && v_p[j].first > p.first){
 			v_p[j + 1] = v_p[j];
 			j--;
 		}
@@ -123,42 +91,51 @@ void sortVectorPair(std::vector<std::pair<int, int> > &v_p)
 	}
 }
 
-void PmergeMe::JacobshtalNum(int n, std::vector<int> &v)
+void PmergeMe::JacobshtalNumvec(int n, std::vector<int> &vo)
 {
-	v.push_back(0);
-	if (n == 1)
-		return ;
-	v.push_back(1);
-	if (n == 2)
-		return ;
-	for (int i = 2; i < n; i++){
-		v.push_back(v[i - 1] + 2 * v[i - 2]);
+	vo.push_back(0);
+	if (n <= 1) return ;
+	vo.push_back(1);
+	if (n <= 2) return ;
+	for (int i = 2; i < n + 2; i++){
+		vo.push_back(vo[i - 1] + 2 * vo[i - 2]);
 	}
+	std::vector<int> v;
+	v = vo;
+	int a, b;
+	vo.clear();
+	for (int i = 0; i < (int)v.size(); i++){
+		a = v[i];
+		b = v[i+1];
+		while(b > a)
+			vo.push_back(b--);
+		if ((int)vo.size() >= n)
+			break;
+	}
+	for (int i = 0; i < (int)vo.size(); i++)
+		vo[i] -= 1;
 }
 
 void PmergeMe::sortVector()
 {
-	int is_odd = 0;
-	int unp;
+	clock_t sv, ev;
+	sv = clock();
+	int is_odd = 0, odd = 0;
 	if (this->vec.size() % 2 != 0)
 		is_odd = 1;
 	int len = this->vec.size();
-	if (is_odd)
-	{
-		unp = this->vec[len - 1];
+	if (is_odd){
+		odd = *this->vec.rbegin();
 		len -= 1;
 	}
 	std::vector<std::pair<int, int> > v_p;
 	std::pair<int, int> p;
-	for (int i = 0; i < len; i += 2)
-	{
-		if (this->vec[i] >= this->vec[i + 1])
-		{
+	for (int i = 0; i < len; i += 2){
+		if (this->vec[i] >= this->vec[i + 1]){
 			p.first = this->vec[i];
 			p.second = this->vec[i + 1];
 		}
-		else
-		{
+		else{
 			p.first = this->vec[i + 1];
 			p.second = this->vec[i];
 		}
@@ -171,29 +148,120 @@ void PmergeMe::sortVector()
 		main.push_back(v_p[i].first);
 		pending.push_back(v_p[i].second);
 	}
-	// std::vector<int> jacobs;
-	// int n = this->vec.size();
-	// JacobshtalNum(n, jacobs);
-	this->vec.clear();
-	// main.push_back(pending[0]);
-	// pending.erase(pending.begin());
-	for (int i = 0; i < static_cast<int>(pending.size()); i++)
-	{
-		int low = 0;
-		int high = main.size() - 1;
-		int mid = 0;
-		while (low <= high)
-		{
-			mid = (low + high) / 2;
-			if (pending[i] < main[mid])
-				high = mid - 1;
-			else
-				low = mid + 1;
+	std::vector<int> jacobs;
+	JacobshtalNumvec(len, jacobs);
+	main.insert(main.begin(), pending[0]);
+	int i = 1, j = 1;
+	while(i < (int)pending.size() && j < (int)jacobs.size()){
+		if (jacobs[j] < (int)pending.size()){
+			main.insert(std::lower_bound(main.begin(), main.end(), pending[jacobs[j]]), pending[jacobs[j]]);
+			i++; j++;
 		}
-		main.insert(main.begin() + low, pending[i]);
+		else j++;
 	}
 	if (is_odd)
-		main.insert(std::lower_bound(main.begin(), main.end(), unp), unp);
+		main.insert(std::lower_bound(main.begin(), main.end(), odd), odd);
+	this->vec.clear();
 	this->vec = main;
-	print();
+	ev = clock();
+	print("After: ");
+	std::cout << "Time to process a range of "<<this->vec.size() << " elements with std::vector : " << (double)(ev - sv) << " us" << std::endl;
+	// this->vec.push_back(1);
+	if (!std::is_sorted(this->vec.begin(), this->vec.end()))
+		throw std::runtime_error("Error: vector not sorted");
+}
+
+//#####################################deque#######################################
+void sortDequePair(std::deque<std::pair<int, int> > &d_p)
+{
+	std::pair<int, int> p;
+	for(int i = 0; i < (int)(d_p.size()); i++)
+	{
+		p = d_p[i];
+		int j = i - 1;
+		while (j >= 0 && d_p[j].first > p.first){
+			d_p[j + 1] = d_p[j];
+			j--;
+		}
+		d_p[j + 1] = p;
+	}
+
+}
+void PmergeMe::JacobshtalNumdeq(int n, std::deque<int> &vo)
+{
+	vo.push_back(0);
+	if (n <= 1) return ;
+	vo.push_back(1);
+	if (n <= 2) return ;
+	for (int i = 2; i < n + 2; i++){
+		vo.push_back(vo[i - 1] + 2 * vo[i - 2]);
+	}
+	std::deque<int> v;
+	v = vo;
+	int a, b;
+	vo.clear();
+	for (int i = 0; i < (int)v.size(); i++)
+	{
+		a = v[i]; b = v[i+1];
+		while(b > a)
+			vo.push_back(b--);
+		if ((int)vo.size() >= n) break;
+	}
+	for (int i = 0; i < (int)vo.size(); i++)
+		vo[i] -= 1;
+}
+
+void PmergeMe::sortDeque()
+{
+	clock_t sd, ed;
+	sd = clock();
+	int is_odd = 0, odd = 0;
+	if (this->deq.size() % 2 != 0)
+		is_odd = 1;
+	int len = this->deq.size();
+	if (is_odd){
+		odd = *this->deq.rbegin();
+		len -= 1;
+	}
+
+	std::deque<std::pair<int, int> > d_p;
+	std::pair<int, int> p;
+	for (int i = 0; i < len; i += 2){
+		if (this->vec[i] >= this->vec[i + 1]){
+			p.first = this->vec[i];
+			p.second = this->vec[i + 1];
+		}
+		else{
+			p.first = this->vec[i + 1];
+			p.second = this->vec[i];
+		}
+		d_p.push_back(p);
+	}
+	sortDequePair(d_p);
+	std::deque<int> main;
+	std::deque<int> pending;
+	for (int i = 0; i < static_cast<int>(d_p.size()); i++){
+		main.push_back(d_p[i].first);
+		pending.push_back(d_p[i].second);
+	}
+	std::deque<int> jacobs;
+	JacobshtalNumdeq(len, jacobs);
+	main.insert(main.begin(), pending[0]);
+	int i = 1, j = 1;
+	while(i < (int)pending.size() && j < (int)jacobs.size()){
+		if (jacobs[j] < (int)pending.size()){
+			main.insert(std::lower_bound(main.begin(), main.end(), pending[jacobs[j]]), pending[jacobs[j]]);
+			i++; j++;
+		}
+		else j++;
+	}
+	if (is_odd)
+		main.insert(std::lower_bound(main.begin(), main.end(), odd), odd);
+	this->deq.clear();
+	this->deq = main;
+	ed = clock();
+	std::cout << "Time to process a range of "<< this->deq.size() << " elements with std::deque : " << (double)(ed - sd) << " us" << std::endl;
+	// this->deq.push_back(1);
+	if (!std::is_sorted(this->deq.begin(), this->deq.end()))
+		throw std::runtime_error("Error: deque not sorted");
 }

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:57:07 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/14 00:38:00 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/15 17:00:24 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ int main(int ac, char **av)
 	
 	try
 	{
-		
 		PmergeMe mrg;
-		mrg.parse(av);
+		mrg.pars(av);
 		mrg.sortVector();
-		// mrg.sortList();
-		// mrg.print();
+		mrg.sortDeque();
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << RED << e.what() << RED << std::endl;
 	}
 }
