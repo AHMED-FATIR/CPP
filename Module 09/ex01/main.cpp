@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:13:15 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/10 14:13:33 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/15 21:51:19 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int main(int ac, char **av)
 {
-	if (ac != 2)
-	{
-		std::cout << "Usage: ./eval_expr \"expression\"" << std::endl;
+	if (ac != 2){
+		std::cerr << "Usage: ./RPN \"expressions\"" << std::endl;
 		return 0;
 	}
 	try

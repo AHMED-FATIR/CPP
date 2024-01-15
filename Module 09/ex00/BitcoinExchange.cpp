@@ -6,20 +6,17 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:14:21 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/10 13:59:16 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/15 21:31:36 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange(){}
-
+BitcoinExchange::~BitcoinExchange(){}
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &src){
 	*this = src;
 }
-
-BitcoinExchange::~BitcoinExchange(){}
-
 BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &src){
 	if (this != &src){
 		this->data = src.data;
@@ -35,8 +32,7 @@ void BitcoinExchange::FillMap(std::string csvFile)
 		throw std::runtime_error("data File not found");
 	if (!std::getline(file, line))
 		throw std::runtime_error("data File is empty");
-	while (std::getline(file, line))
-	{
+	while (std::getline(file, line)){
 		std::stringstream ss(line);
 		std::getline(ss, date, ',');
 		std::getline(ss, price, '\0');
@@ -99,8 +95,7 @@ void	BitcoinExchange::ParsingValue(std::string value, std::string date)
 	if (value[0] == '-')
 		{std::cout << "Error: not a positive number." << std::endl; return;}
 	int point = 0;
-	for (size_t i = 0; i < value.length(); i++)
-	{
+	for (size_t i = 0; i < value.length(); i++){
 		if (value[i] == '.')
 			{point++; i++;}
 		if (!std::isdigit(value[i]))
@@ -125,8 +120,7 @@ void BitcoinExchange::ExchangeData(std::string InputFile)
 		throw std::runtime_error("File is empty");
 	if (line != "date | value")
 		throw std::runtime_error("Invalid file format");
-	while (std::getline(file, line))
-	{
+	while (std::getline(file, line)){
 		std::stringstream ss(line);
 		std::getline(ss, date, '|');
 		std::getline(ss, value, '\0');

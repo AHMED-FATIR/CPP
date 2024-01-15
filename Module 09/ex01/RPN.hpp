@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:03:14 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/10 15:55:07 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/15 21:05:12 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	RPN(RPN const & src);
 	RPN & operator=(RPN const & src);
 	~RPN();
-
+	void check_arg(std::string str);
 	void calculate();
 };
 

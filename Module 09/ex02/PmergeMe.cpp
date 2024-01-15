@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:57:10 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/15 17:10:53 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/15 21:48:32 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,10 +165,8 @@ void PmergeMe::sortVector()
 	this->vec = main;
 	ev = clock();
 	print("After: ");
-	std::cout << "Time to process a range of "<<this->vec.size() << " elements with std::vector : " << (double)(ev - sv) << " us" << std::endl;
-	// this->vec.push_back(1);
-	if (!std::is_sorted(this->vec.begin(), this->vec.end()))
-		throw std::runtime_error("Error: vector not sorted");
+	std::cout << "Time to process a range of "<<this->vec.size() << " elements with std::vector : ";
+	std::cout << (double)(ev - sv) << " us" << std::endl;
 }
 
 //#####################################deque#######################################
@@ -260,8 +258,15 @@ void PmergeMe::sortDeque()
 	this->deq.clear();
 	this->deq = main;
 	ed = clock();
-	std::cout << "Time to process a range of "<< this->deq.size() << " elements with std::deque : " << (double)(ed - sd) << " us" << std::endl;
-	// this->deq.push_back(1);
-	if (!std::is_sorted(this->deq.begin(), this->deq.end()))
-		throw std::runtime_error("Error: deque not sorted");
+	std::cout << "Time to process a range of "<< this->deq.size() << " elements with std::deque : ";
+	std::cout << (double)(ed - sd) << " us" << std::endl;
+
+	{
+		// this->deq.push_back(1);
+		if (!std::is_sorted(this->deq.begin(), this->deq.end()))
+			throw std::runtime_error("Error: deque not sorted");
+			// this->vec.push_back(1);
+		if (!std::is_sorted(this->vec.begin(), this->vec.end())) // forbidden function
+			throw std::runtime_error("Error: vector not sorted");
+	}
 }
