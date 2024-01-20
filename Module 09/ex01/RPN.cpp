@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:06:49 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/15 21:51:43 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/17 15:20:30 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ void RPN::calculate()
 			this->stack.push(c);
 		}
 		else{
-			std::istringstream iss(tmp);
-			int d;
-			iss >> d;
+			int d = std::atoi(tmp.c_str());
 			if (d > 10) throw std::exception();
 			this->stack.push(d);
 		}

@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 10:03:05 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/10 12:50:04 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/17 14:06:15 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ public:
 		~BitcoinExchange();
 
 		void FillMap(std::string csvFile);
-		void ExchangeData(std::string InputFile);
-		double GetVal(std::string dt, double val);
 		int ParsingDate(std::string &date);
 		void ParsingValue(std::string value, std::string date);
+		void ExchangeData(std::string InputFile);
 		
 };
 

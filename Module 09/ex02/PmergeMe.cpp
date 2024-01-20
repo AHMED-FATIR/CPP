@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:57:10 by afatir            #+#    #+#             */
-/*   Updated: 2024/01/15 21:48:32 by afatir           ###   ########.fr       */
+/*   Updated: 2024/01/17 15:52:05 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &src){
 	return *this;
 }
 
-//#####################################parsing#######################################
 void PmergeMe::print(std::string str)
 {
 	std::vector<int>::iterator it = this->vec.begin();
@@ -36,8 +35,9 @@ void PmergeMe::print(std::string str)
 	}
 	std::cout << std::endl;
 }
+//#####################################parsing VECTOR#######################################
 
-void PmergeMe::inside(std::string av)
+void PmergeMe::insideVector(std::string av)
 {
 	for (size_t i = 0; i < av.length(); i++){
 		if (av[i] == ' ')
@@ -47,33 +47,28 @@ void PmergeMe::inside(std::string av)
 	}
 	std::istringstream iss(av);
 	std::string tmp;
-	while (iss >> tmp){
+	while (iss >> tmp)
 		this->vec.push_back(std::atoi(tmp.c_str()));
-		this->deq.push_back(std::atoi(tmp.c_str()));
-	}
 }
 
-void PmergeMe::pars(char **av)
+void PmergeMe::parsVector(char **av)
 {
 	for (size_t i = 1; av[i]; i++){
 		int flag = 0;
 		for (size_t j = 0; av[i][j]; j++){
 			if (av[i][j] == ' '){
 				flag = 1;
-				inside(av[i]);
+				insideVector(av[i]);
 				break;
 			}
 			else if (!std::isdigit(av[i][j]))
 				throw std::runtime_error("Error");
 		}
-		if (flag == 0){
-			this->deq.push_back(std::atoi(av[i]));
+		if (flag == 0)
 			this->vec.push_back(std::atoi(av[i]));
-		}
 	}
 	if (this->vec.size() == 1)
 		throw std::runtime_error("Error");
-	print("Before: ");
 }
 
 //#####################################vector#######################################
@@ -94,10 +89,9 @@ void sortVectorPair(std::vector<std::pair<int, int> > &v_p)
 void PmergeMe::JacobshtalNumvec(int n, std::vector<int> &vo)
 {
 	vo.push_back(0);
-	if (n <= 1) return ;
 	vo.push_back(1);
 	if (n <= 2) return ;
-	for (int i = 2; i < n + 2; i++){
+	for (int i = 2; i <= n; i++){
 		vo.push_back(vo[i - 1] + 2 * vo[i - 2]);
 	}
 	std::vector<int> v;
@@ -105,21 +99,21 @@ void PmergeMe::JacobshtalNumvec(int n, std::vector<int> &vo)
 	int a, b;
 	vo.clear();
 	for (int i = 0; i < (int)v.size(); i++){
-		a = v[i];
-		b = v[i+1];
+		a = v[i]; b = v[i+1];
 		while(b > a)
 			vo.push_back(b--);
-		if ((int)vo.size() >= n)
-			break;
+		if ((int)vo.size() >= n) break;
 	}
 	for (int i = 0; i < (int)vo.size(); i++)
 		vo[i] -= 1;
 }
 
-void PmergeMe::sortVector()
+void PmergeMe::sortVector(char **av)
 {
 	clock_t sv, ev;
 	sv = clock();
+	parsVector(av);
+	print("Before: ");
 	int is_odd = 0, odd = 0;
 	if (this->vec.size() % 2 != 0)
 		is_odd = 1;
@@ -164,17 +158,49 @@ void PmergeMe::sortVector()
 	this->vec.clear();
 	this->vec = main;
 	ev = clock();
-	print("After: ");
-	std::cout << "Time to process a range of "<<this->vec.size() << " elements with std::vector : ";
-	std::cout << (double)(ev - sv) << " us" << std::endl;
+	this->time = (double)(ev - sv);
+}
+//#####################################parsing DEQUE#######################################
+
+void PmergeMe::insideDeque(std::string av)
+{
+	for (size_t i = 0; i < av.length(); i++){
+		if (av[i] == ' ')
+			continue;
+		if (!std::isdigit(av[i]))
+				throw std::runtime_error("Error");
+	}
+	std::istringstream iss(av);
+	std::string tmp;
+	while (iss >> tmp)
+		this->deq.push_back(std::atoi(tmp.c_str()));
+}
+
+void PmergeMe::parsDeque(char **av)
+{
+	for (size_t i = 1; av[i]; i++){
+		int flag = 0;
+		for (size_t j = 0; av[i][j]; j++){
+			if (av[i][j] == ' '){
+				flag = 1;
+				insideDeque(av[i]);
+				break;
+			}
+			else if (!std::isdigit(av[i][j]))
+				throw std::runtime_error("Error");
+		}
+		if (flag == 0)
+			this->deq.push_back(std::atoi(av[i]));
+	}
+	if (this->deq.size() == 1)
+		throw std::runtime_error("Error");
 }
 
 //#####################################deque#######################################
 void sortDequePair(std::deque<std::pair<int, int> > &d_p)
 {
 	std::pair<int, int> p;
-	for(int i = 0; i < (int)(d_p.size()); i++)
-	{
+	for(int i = 0; i < (int)(d_p.size()); i++){
 		p = d_p[i];
 		int j = i - 1;
 		while (j >= 0 && d_p[j].first > p.first){
@@ -185,21 +211,20 @@ void sortDequePair(std::deque<std::pair<int, int> > &d_p)
 	}
 
 }
+
 void PmergeMe::JacobshtalNumdeq(int n, std::deque<int> &vo)
 {
 	vo.push_back(0);
-	if (n <= 1) return ;
 	vo.push_back(1);
 	if (n <= 2) return ;
-	for (int i = 2; i < n + 2; i++){
+	for (int i = 2; i <= n; i++){
 		vo.push_back(vo[i - 1] + 2 * vo[i - 2]);
 	}
 	std::deque<int> v;
 	v = vo;
 	int a, b;
 	vo.clear();
-	for (int i = 0; i < (int)v.size(); i++)
-	{
+	for (int i = 0; i < (int)v.size(); i++){
 		a = v[i]; b = v[i+1];
 		while(b > a)
 			vo.push_back(b--);
@@ -209,10 +234,11 @@ void PmergeMe::JacobshtalNumdeq(int n, std::deque<int> &vo)
 		vo[i] -= 1;
 }
 
-void PmergeMe::sortDeque()
+void PmergeMe::sortDeque(char **av)
 {
 	clock_t sd, ed;
 	sd = clock();
+	parsDeque(av);
 	int is_odd = 0, odd = 0;
 	if (this->deq.size() % 2 != 0)
 		is_odd = 1;
@@ -221,7 +247,6 @@ void PmergeMe::sortDeque()
 		odd = *this->deq.rbegin();
 		len -= 1;
 	}
-
 	std::deque<std::pair<int, int> > d_p;
 	std::pair<int, int> p;
 	for (int i = 0; i < len; i += 2){
@@ -257,16 +282,19 @@ void PmergeMe::sortDeque()
 		main.insert(std::lower_bound(main.begin(), main.end(), odd), odd);
 	this->deq.clear();
 	this->deq = main;
+	print("After: ");
 	ed = clock();
 	std::cout << "Time to process a range of "<< this->deq.size() << " elements with std::deque : ";
 	std::cout << (double)(ed - sd) << " us" << std::endl;
+	std::cout << "Time to process a range of "<<this->vec.size() << " elements with std::vector : ";
+	std::cout << this->time << " us" << std::endl;
 
-	{
+	{// forbidden function
 		// this->deq.push_back(1);
 		if (!std::is_sorted(this->deq.begin(), this->deq.end()))
 			throw std::runtime_error("Error: deque not sorted");
 			// this->vec.push_back(1);
-		if (!std::is_sorted(this->vec.begin(), this->vec.end())) // forbidden function
+		if (!std::is_sorted(this->vec.begin(), this->vec.end()))
 			throw std::runtime_error("Error: vector not sorted");
 	}
 }
