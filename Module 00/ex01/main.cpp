@@ -6,7 +6,7 @@
 /*   By: afatir <afatir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 09:16:24 by afatir            #+#    #+#             */
-/*   Updated: 2023/12/23 09:15:30 by afatir           ###   ########.fr       */
+/*   Updated: 2024/02/22 12:11:52 by afatir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ std::string	GetInput(std::string string)
 			if (std::cin.eof())
 			{
 				std::cin.clear();
-				fseek(stdin, 0, SEEK_END);
-				// rewind(stdin);
+				rewind(stdin);
+				// fseek(stdin, 0, SEEK_END);
 				std::cout << std::endl;
 			}
 		}
