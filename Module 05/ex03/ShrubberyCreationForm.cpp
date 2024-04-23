@@ -38,8 +38,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) :
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &src)
 {
 	std::cout << YEL << "Copy Assignation operator called form ShrubberyCreationForm" << WHI <<std::endl;
-	if (this != &src)
-	{
+	if (this != &src){
 		this->_target = src._target;
 		AForm::operator=(src);
 	}
@@ -52,8 +51,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw AForm::GradeTooLowException();
 	else if (!getSigned())
 		throw NotSignedException();
-	else
-	{
+	else{
 		std::cout << "ShrubberyCreationForm is executed" << std::endl;
 		this->action();
 	}

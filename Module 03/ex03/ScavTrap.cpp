@@ -12,7 +12,7 @@
 
 #include"ScavTrap.hpp"
 	
-ScavTrap::ScavTrap():  ClapTrap("Default"){
+ScavTrap::ScavTrap(): ClapTrap("Default"){
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;

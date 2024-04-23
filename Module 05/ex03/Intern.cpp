@@ -32,8 +32,7 @@ Intern::Intern(Intern const & src)
 
 Intern &Intern::operator=(Intern const & src)
 {
-	if (this != &src)
-	{
+	if (this != &src){
 		std::cout << YEL << "Copy assignment operator called" << WHI << std::endl;
 		this->_name = src._name;
 	}

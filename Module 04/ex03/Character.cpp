@@ -77,7 +77,7 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx){
 	if (idx >= 0 && idx < 4)
-		inventory[idx] = NULL; // old version missing garbage collection
+		inventory[idx] = NULL; //old version missing garbage collection
 }
 
 void Character::use(int idx, ICharacter &target) {

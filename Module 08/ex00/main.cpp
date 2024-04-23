@@ -26,6 +26,7 @@ int main()
 	std::vector<int> v;
 	std::list<int> l;
 	std::deque<int> d;
+	int i;
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -37,23 +38,29 @@ int main()
 	std::cout << "------------------------------" << std::endl;
 	try
 	{
-		std::cout << *easyfind(v, 5) << std::endl;
-		std::cout << *easyfind(l, 5) << std::endl;
-		std::cout << *easyfind(d, 5) << std::endl;
+		i = 5;
+		std::cout << *easyfind(v, i) << std::endl;
+		i = 7;
+		std::cout << *easyfind(l, i) << std::endl;
+		i = 11;
+		std::cout << *easyfind(d, i) << std::endl; //the exception will be thrown here
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Not found" << std::endl;
+		std::cout << i << " Not found" << std::endl;
 	}
 	try
 	{
-		std::cout << *easyfind(v, 15) << std::endl;
-		std::cout << *easyfind(l, 15) << std::endl;
-		std::cout << *easyfind(d, 15) << std::endl;
+		i = 2;
+		std::cout << *easyfind(l, i) << std::endl;
+		i = 15;
+		std::cout << *easyfind(v, i) << std::endl; //the exception will be thrown here
+		i = 5;
+		std::cout << *easyfind(d, i) << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Not found" << std::endl;
+		std::cout << i << " Not found" << std::endl;
 	}
 	return 0;
 }

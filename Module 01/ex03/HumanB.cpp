@@ -12,7 +12,7 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB() : name("Default"){
+HumanB::HumanB() : name("Default"), weapon(NULL){
 	std::cout << GRE << "Default constructor of HumanB called" << WHI << std::endl;
 }
 

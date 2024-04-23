@@ -291,10 +291,10 @@ void PmergeMe::sortDeque(char **av)
 
 	{// forbidden function
 		// this->deq.push_back(1);
-		if (!std::is_sorted(this->deq.begin(), this->deq.end()))
-			throw std::runtime_error("Error: deque not sorted");
+		// if (!std::is_sorted(this->deq.begin(), this->deq.end()))
+		// 	throw std::runtime_error("Error: deque not sorted");
 			// this->vec.push_back(1);
-		if (!std::is_sorted(this->vec.begin(), this->vec.end()))
-			throw std::runtime_error("Error: vector not sorted");
+		// if (!std::is_sorted(this->vec.begin(), this->vec.end()))
+		// 	throw std::runtime_error("Error: vector not sorted");
 	}
 }

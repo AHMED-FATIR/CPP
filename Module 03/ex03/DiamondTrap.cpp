@@ -12,7 +12,7 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() :  ClapTrap(), FragTrap(), ScavTrap(){
+DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap(){
 	_name = ClapTrap::name;
 	hitPoints = 100;
 	energyPoints = 50;

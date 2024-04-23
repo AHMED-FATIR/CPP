@@ -21,9 +21,8 @@ Serializer::Serializer(Serializer const &cpy){
 Serializer::~Serializer(){}
 
 Serializer	&Serializer::operator=(Serializer const &cpy){
-	if (this != &cpy){
+	if (this != &cpy)
 		*this = cpy;
-	}
 	return *this;
 }
 

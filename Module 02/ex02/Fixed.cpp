@@ -158,8 +158,7 @@ int	Power(int nb, int power)
 
 	if (power < 0)
 		return (0);
-	while (i < power)
-	{
+	while (i < power){
 		res = res * nb;
 	    i++;
 	}

@@ -24,8 +24,7 @@ std::string Resize(std::string cmd)
 
 std::string	GetInput(std::string string)
 {
-	std::string	command;
-	std::string	n_command;
+	std::string	command, n_command;
 
 	while (1)
 	{
